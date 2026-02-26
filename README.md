@@ -125,25 +125,6 @@ Common OfficeJet 200 battery failure symptoms:
 * “Battery problem” message on screen
 * Battery will not charge
 * Powers off immediately when unplugged
-
-Document the exact behavior. That matters.
-
----
-
-# How to Turn This Into a Portfolio-Grade Incident
-
-Instead of:
-
-> My printer battery is bad.
-
-You write:
-
-> Diagnosed power instability issue on portable network printer.
-> Identified failed internal lithium-ion battery causing unexpected shutdown during mobile operation.
-> Verified AC adapter functionality and isolated battery as root cause.
-
-Now you sound technical.
-
 ---
 
 # Structured Troubleshooting Flow (Use This in README)
