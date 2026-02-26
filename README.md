@@ -4,7 +4,7 @@
 
 ## 📌 Project Overview
 
-Deployed and configured a portable wireless printer — **HP OfficeJet 200 Mobile (CZ993A)** — in a Windows 10 lab environment.
+Deployed and configured a portable wireless printer — **HP OfficeJet 200 Mobile (CZ993A)** — in a Windows 10 environment.
 
 This project simulates a real-world Help Desk ticket involving:
 
@@ -96,26 +96,9 @@ Simulated enterprise deployment method:
 
 ✔ Successful manual configuration.
 
-Reasoning:
-
-In enterprise environments:
-
-* Broadcast discovery may be disabled
-* Printers are deployed via IP or print server
-* Manual port configuration is common
-
----
-That actually makes this project **better**, not worse.
-
-A faulty battery on the **HP OfficeJet 200 Mobile Printer** turns this from a basic setup into a **hardware diagnostics case study** — which is valuable for Level 1 roles.
-
-This printer is designed to be portable and battery-powered, so power-related faults are a realistic support scenario.
-
 ---
 
 # First: Confirm the Symptoms
-
-Be precise. What exactly happens?
 
 Common OfficeJet 200 battery failure symptoms:
 
@@ -127,7 +110,7 @@ Common OfficeJet 200 battery failure symptoms:
 * Powers off immediately when unplugged
 ---
 
-# Structured Troubleshooting Flow (Use This in README)
+# Structured Troubleshooting Flow
 
 ## 🔎 Phase 1 – Power Verification
 
@@ -165,9 +148,6 @@ Some issues can be firmware-related.
 * Check firmware version via control panel
 * Compare with HP support site
 * Note if update attempted
-
-Even if you don’t update, documenting that check shows diagnostic maturity.
-
 ---
 
 # Likely Root Cause
@@ -185,7 +165,6 @@ If printer only works plugged in:
 → Battery replacement required.
 
 ---
-
 # What This Demonstrates for Help Desk
 
 You can now claim experience with:
@@ -195,15 +174,6 @@ You can now claim experience with:
 * AC vs DC troubleshooting
 * Mobile device support
 * Replacement part determination
-
-This is more impressive than basic Wi-Fi setup.
-
----
-
-# Update Your README Section
-
-Add this:
-
 ---
 
 ## ⚠ Incident: Printer Powers Off When Unplugged
