@@ -105,35 +105,152 @@ In enterprise environments:
 * Manual port configuration is common
 
 ---
-⚠ Incident: Printer Powers Off When Unplugged
-Symptoms
+That actually makes this project **better**, not worse.
 
-Device boots normally on AC power
+A faulty battery on the **HP OfficeJet 200 Mobile Printer** turns this from a basic setup into a **hardware diagnostics case study** — which is valuable for Level 1 roles.
 
-Shuts down immediately when AC removed
+This printer is designed to be portable and battery-powered, so power-related faults are a realistic support scenario.
 
-Battery indicator does not retain charge
+---
 
-Investigation
+# First: Confirm the Symptoms
 
-Verified AC adapter voltage output stable
+Be precise. What exactly happens?
 
-Confirmed device stable while plugged in
+Common OfficeJet 200 battery failure symptoms:
 
-Observed no charge retention over extended period
+* Printer will not power on unless plugged in
+* Battery icon shows error
+* Rapid blinking power light
+* “Battery problem” message on screen
+* Battery will not charge
+* Powers off immediately when unplugged
 
-Isolated battery as single failure domain
+Document the exact behavior. That matters.
 
-Root Cause
+---
+
+# How to Turn This Into a Portfolio-Grade Incident
+
+Instead of:
+
+> My printer battery is bad.
+
+You write:
+
+> Diagnosed power instability issue on portable network printer.
+> Identified failed internal lithium-ion battery causing unexpected shutdown during mobile operation.
+> Verified AC adapter functionality and isolated battery as root cause.
+
+Now you sound technical.
+
+---
+
+# Structured Troubleshooting Flow (Use This in README)
+
+## 🔎 Phase 1 – Power Verification
+
+1. Tested with OEM AC adapter
+2. Confirmed printer boots normally while plugged in
+3. Removed battery and retested (if accessible)
+4. Observed shutdown behavior when disconnected
+
+Conclusion:
+AC power stable → Battery likely fault domain.
+
+---
+
+## 🔎 Phase 2 – Battery Health Indicators
+
+Check:
+
+* Battery icon status in control panel
+* Does charge % increase while plugged in?
+* Does printer detect battery removal?
+
+If:
+
+* Charge remains at 0%
+* Or shuts off immediately when unplugged
+
+→ Battery cell likely degraded or failed.
+
+---
+
+## 🔎 Phase 3 – Firmware Consideration
+
+Some issues can be firmware-related.
+
+* Check firmware version via control panel
+* Compare with HP support site
+* Note if update attempted
+
+Even if you don’t update, documenting that check shows diagnostic maturity.
+
+---
+
+# Likely Root Cause
+
+The OfficeJet 200 uses a lithium-ion battery pack.
+
+Over time:
+
+* Cells degrade
+* Charging circuits fail
+* Internal resistance increases
+* Unit will not hold charge
+
+If printer only works plugged in:
+→ Battery replacement required.
+
+---
+
+# What This Demonstrates for Help Desk
+
+You can now claim experience with:
+
+* Hardware fault isolation
+* Power subsystem diagnostics
+* AC vs DC troubleshooting
+* Mobile device support
+* Replacement part determination
+
+This is more impressive than basic Wi-Fi setup.
+
+---
+
+# Update Your README Section
+
+Add this:
+
+---
+
+## ⚠ Incident: Printer Powers Off When Unplugged
+
+### Symptoms
+
+* Device boots normally on AC power
+* Shuts down immediately when AC removed
+* Battery indicator does not retain charge
+
+### Investigation
+
+* Verified AC adapter voltage output stable
+* Confirmed device stable while plugged in
+* Observed no charge retention over extended period
+* Isolated battery as single failure domain
+
+### Root Cause
 
 Degraded internal lithium-ion battery.
 
-**Resolution Options**
+### Resolution Options
 
-*Replace battery pack
-*Operate in AC-only mode
-*Evaluate cost vs replacement printer
+* Replace battery pack
+* Operate in AC-only mode
+* Evaluate cost vs replacement printer
 
+---
 # ⚠ Simulated Incident: Printer Showing “Offline”
 
 ## Scenario
