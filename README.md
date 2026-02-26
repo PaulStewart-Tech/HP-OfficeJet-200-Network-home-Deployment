@@ -24,7 +24,7 @@ The objective was to document structured troubleshooting methodology consistent 
 | Component     | Configuration                                |
 | ------------- | -------------------------------------------- |
 | Client OS     | Windows 10 Pro                               |
-| Network       | DHCP-enabled home lab router                 |
+| Network       | DHCP-enabled home router                     |
 | Printer       | HP OfficeJet 200 Mobile                      |
 | Connectivity  | Wi-Fi Infrastructure Mode                    |
 | Power         | Battery-operated (tested unplugged scenario) |
