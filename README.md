@@ -165,17 +165,6 @@ If printer only works plugged in:
 → Battery replacement required.
 
 ---
-# What This Demonstrates for Help Desk
-
-You can now claim experience with:
-
-* Hardware fault isolation
-* Power subsystem diagnostics
-* AC vs DC troubleshooting
-* Mobile device support
-* Replacement part determination
----
-
 ## ⚠ Incident: Printer Powers Off When Unplugged
 
 ### Symptoms
@@ -197,10 +186,11 @@ Degraded internal lithium-ion battery.
 
 ### Resolution Options
 
-* Replace battery pack
-* Operate in AC-only mode
-* Evaluate cost vs replacement printer
+* Replace battery pack (164.83 on Amizon.ca)
+* Operate in AC-only mode (Cannot operate without battery replacement, error message on screen showing faulty battery)
+* Evaluate cost vs replacement printer (new printer 459.99 curently)
 
+Result: replace battery from Amazon. 
 ---
 # ⚠ Simulated Incident: Printer Showing “Offline”
 
