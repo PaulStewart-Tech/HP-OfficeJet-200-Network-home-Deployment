@@ -190,7 +190,7 @@ Degraded internal lithium-ion battery.
 * Operate in AC-only mode (Cannot operate without battery replacement, error message on screen showing faulty battery)
 * Evaluate cost vs replacement printer (new printer 459.99 curently)
 
-Result: replace battery from Amazon. 
+Result: Replaced battery from Amazon. 
 ---
 # ⚠ Simulated Incident: Printer Showing “Offline”
 
