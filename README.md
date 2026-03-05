@@ -1,287 +1,276 @@
-# 🖨 Network Printer Deployment & Troubleshooting
+# HP OfficeJet 200 Mobile Printer Deployment & Troubleshooting
 
-## HP OfficeJet 200 Mobile (CZ993A)
+## Project Overview
 
-## 📌 Project Overview
+This project documents the deployment, configuration, and troubleshooting of an HP OfficeJet 200 Mobile printer in a Windows environment. The objective was to configure wireless printing using **Wi-Fi Direct and standard Wi-Fi network connectivity**, diagnose hardware issues encountered during setup, and validate successful printing functionality.
 
-Deployed and configured a portable wireless printer — **HP OfficeJet 200 Mobile (CZ993A)** — in a Windows 10 environment.
-
-This project simulates a real-world Help Desk ticket involving:
-
-* Wireless printer deployment
-* Driver installation & validation
-* TCP/IP manual printer configuration
-* DHCP IP changes causing “Printer Offline”
-* Wi-Fi Direct vs Infrastructure mode comparison
-* Root cause analysis and resolution
-
-The objective was to document structured troubleshooting methodology consistent with Level 1 IT Support practices.
+This project simulates a **real-world Help Desk / Desktop Support scenario** involving hardware troubleshooting, device configuration, and print validation.
 
 ---
 
-## 🖥 Lab Environment
+# Environment
 
-| Component     | Configuration                                |
-| ------------- | -------------------------------------------- |
-| Client OS     | Windows 10 Pro                               |
-| Network       | DHCP-enabled home router                     |
-| Printer       | HP OfficeJet 200 Mobile                      |
-| Connectivity  | Wi-Fi Infrastructure Mode                    |
-| Power         | Battery-operated (tested unplugged scenario) |
-| IP Assignment | DHCP → DHCP Reservation                      |
-
----
-
-## 🎯 Deployment Objectives
-
-1. Connect printer to wireless infrastructure network
-2. Verify assigned IP address
-3. Validate connectivity from client system
-4. Install manufacturer driver package
-5. Add printer manually via TCP/IP
-6. Simulate offline scenario and resolve
+| Component           | Configuration                     |
+| ------------------- | --------------------------------- |
+| Printer             | HP OfficeJet 200 Mobile (CZ993A)  |
+| Client Device       | Windows Laptop                    |
+| Connection Methods  | Wi-Fi Direct / Standard Wi-Fi     |
+| Driver Installation | HP Smart / Windows Printer Driver |
+| Validation          | Windows Test Page                 |
 
 ---
 
-# 🔧 Phase 1 – Wireless Network Configuration
+# Skills Demonstrated
 
-Connected printer to lab Wi-Fi via onboard display.
+* Hardware troubleshooting
+* Battery replacement
+* Wireless device configuration
+* Wi-Fi Direct networking
+* Printer driver installation
+* Print troubleshooting
+* Endpoint device management
+* Technical documentation
 
-Retrieved assigned IP address from:
+---
 
-* Printer network configuration page
+# Network Architecture
 
-Validated connectivity:
+### Wi-Fi Direct Mode
+
+Laptop connects directly to the printer without a router.
 
 ```
-ping <printer-ip>
+Laptop
+   │
+   │ Wi-Fi Direct
+   │
+HP OfficeJet 200
 ```
 
-✔ Successful ICMP response confirmed network layer communication.
+### Wi-Fi Network Mode
+
+Printer connects to the local wireless network.
+
+```
+Laptop
+   │
+   │
+Wi-Fi Router
+   │
+   │
+HP OfficeJet 200
+```
 
 ---
 
-# 🧩 Phase 2 – Driver Installation & Validation
+# Implementation
 
-Installed official HP driver package to ensure:
+## 1. Initial Printer Setup
 
-* Full feature access
-* Status monitoring
-* Proper spooler integration
+Steps performed:
 
-Compared:
+1. Powered on printer
+2. Installed ink cartridges
+3. Verified printer functionality
+4. Attempted mobile operation
 
-* Windows automatic driver install
-* HP full driver package
-
-Final implementation: HP driver for stability and complete functionality.
-
-Tested:
-
-* Print queue visibility
-* Test page print
-* Printer status reporting
+During this stage a **hardware issue with the battery** was discovered.
 
 ---
 
-# 🌐 Phase 3 – Manual TCP/IP Printer Addition
+# Hardware Issue – Battery Failure
 
-Simulated enterprise deployment method:
+## Problem
 
-1. Control Panel → Devices & Printers
-2. “The printer I want isn’t listed”
-3. Add printer using TCP/IP address
-4. Created Standard TCP/IP port
-5. Entered printer IP manually
+The printer would only power on when connected to the AC adapter.
 
-✔ Successful manual configuration.
+### Observed Symptoms
 
----
-
-# First: Confirm the Symptoms
-
-Common OfficeJet 200 battery failure symptoms:
-
-* Printer will not power on unless plugged in
-* Battery icon shows error
-* Rapid blinking power light
-* “Battery problem” message on screen
-* Battery will not charge
-* Powers off immediately when unplugged
----
-
-# Structured Troubleshooting Flow
-
-## 🔎 Phase 1 – Power Verification
-
-1. Tested with OEM AC adapter
-2. Confirmed printer boots normally while plugged in
-3. Removed battery and retested (if accessible)
-4. Observed shutdown behavior when disconnected
-
-Conclusion:
-AC power stable → Battery likely fault domain.
+* Printer powered off immediately when unplugged
+* Battery indicator showed no charge
+* Device functioned normally when connected to AC power
 
 ---
 
-## 🔎 Phase 2 – Battery Health Indicators
+## Troubleshooting Steps
 
-Check:
+Performed the following diagnostics:
 
-* Battery icon status in control panel
-* Does charge % increase while plugged in?
-* Does printer detect battery removal?
+1. Verified AC adapter functionality
+2. Removed and reseated battery
+3. Inspected battery contacts
+4. Attempted battery recharge
+5. Retested printer without AC power
 
-If:
-
-* Charge remains at 0%
-* Or shuts off immediately when unplugged
-
-→ Battery cell likely degraded or failed.
-
----
-
-## 🔎 Phase 3 – Firmware Consideration
-
-Some issues can be firmware-related.
-
-* Check firmware version via control panel
-* Compare with HP support site
-* Note if update attempted
----
-
-# Likely Root Cause
-
-The OfficeJet 200 uses a lithium-ion battery pack.
-
-Over time:
-
-* Cells degrade
-* Charging circuits fail
-* Internal resistance increases
-* Unit will not hold charge
-
-If printer only works plugged in:
-→ Battery replacement required.
-
----
-## ⚠ Incident: Printer Powers Off When Unplugged
-
-### Symptoms
-
-* Device boots normally on AC power
-* Shuts down immediately when AC removed
-* Battery indicator does not retain charge
-
-### Investigation
-
-* Verified AC adapter voltage output stable
-* Confirmed device stable while plugged in
-* Observed no charge retention over extended period
-* Isolated battery as single failure domain
-
-### Root Cause
-
-Degraded internal lithium-ion battery.
-
-### Resolution Options
-
-* Replace battery pack (164.83 on Amizon.ca)
-* Operate in AC-only mode (Cannot operate without battery replacement, error message on screen showing faulty battery)
-* Evaluate cost vs replacement printer (new printer 459.99 curently)
-
-Result: Replaced battery from Amazon. 
----
-# ⚠ Simulated Incident: Printer Showing “Offline”
-
-## Scenario
-
-After router reboot:
-
-* Printer received new DHCP IP
-* Windows printer port still pointed to old IP
-* Status showed “Offline”
-
----
-
-## Investigation Steps
-
-* `ping <old-ip>` → Failed
-* Printed new network config page
-* Verified new DHCP-assigned IP
-* Confirmed mismatch in printer port settings
-
----
-
-## Root Cause
-
-Dynamic IP reassignment caused TCP/IP port misconfiguration.
+These steps indicated the battery had failed.
 
 ---
 
 ## Resolution
 
-Implemented DHCP reservation on router to bind printer MAC address to fixed IP.
+The original battery was replaced.
 
-Updated printer port configuration to new reserved IP.
+After replacement:
 
----
-
-## Validation
-
-* Successful ping response
-* Test page printed successfully
-* Status returned to “Ready”
+* Battery successfully charged
+* Printer powered on without AC adapter
+* Mobile functionality restored
 
 ---
 
-# 🔎 Additional Testing
+# Wi-Fi Direct Configuration
 
-### Wi-Fi Direct Mode
+Wi-Fi Direct allows devices to connect directly to the printer without requiring a wireless router.
 
-Tested direct connection mode:
+## Steps
 
-* Connected laptop directly to printer SSID
-* Printed test document
-* Observed limited network accessibility
-
-Conclusion:
-
-Wi-Fi Direct useful for field/mobile deployment but not ideal for structured network environments.
-
----
-
-# 🧠 Skills Demonstrated
-
-* Network troubleshooting
-* ICMP validation
-* DHCP understanding
-* IP reservation configuration
-* TCP/IP printer deployment
-* Windows spooler validation
-* Root cause analysis
-* Structured incident documentation
-
----
-
-# 📂 Repository Structure
+1. Navigate to printer **Wireless Settings**
+2. Enable **Wi-Fi Direct**
+3. Record network information:
 
 ```
-HP-OfficeJet-200-Deployment/
-│
-├── README.md
-├── screenshots/
-│   ├── network-config-page.png
-│   ├── ping-test.png
-│   ├── tcp-ip-port-settings.png
-│   ├── driver-install.png
-│   ├── offline-error.png
-│   └── test-print-success.png
-└── incident-report.md
+SSID: DIRECT-xx-HP OfficeJet 200
+Password: ********
 ```
 
+4. On the laptop:
 
-* Create a Jira-style ticket summary for this
-* Or review it brutally and tell you if it’s strong enough for Toronto entry-level IT roles
+```
+Windows Settings
+→ Network & Internet
+→ Wi-Fi
+```
 
-Your move.
+5. Connect to the Wi-Fi Direct network
+6. Enter the printer password
+
+Connection was successfully established.
+
+---
+
+# Printer Driver Installation
+
+## Method 1 – HP Smart
+
+1. Install HP Smart
+2. Launch application
+3. Select **Add Printer**
+4. Printer automatically detected
+
+## Method 2 – Windows Printer Installation
+
+```
+Settings
+→ Bluetooth & Devices
+→ Printers & Scanners
+→ Add Device
+```
+
+Windows detected and installed the printer driver.
+
+---
+
+# Standard Wi-Fi Network Configuration
+
+The printer was also configured to join the local wireless network.
+
+## Steps
+
+1. Open printer **Wireless Settings**
+2. Select **Wireless Setup Wizard**
+3. Choose local Wi-Fi network
+4. Enter network password
+5. Confirm printer successfully joined the network
+
+The printer obtained a network connection and became available to devices on the same network.
+
+---
+
+# Print Issue – Blank Test Page
+
+After installation, the printer accepted print jobs but produced **blank pages**.
+
+## Observed Symptoms
+
+* Paper fed correctly
+* Printer completed print job
+* Output pages contained no ink
+
+---
+
+## Troubleshooting
+
+Performed the following diagnostics:
+
+1. Verified ink cartridges installed correctly
+2. Checked protective tape removal
+3. Verified ink levels
+4. Ran **Printhead Cleaning**
+5. Ran **Printer Alignment**
+
+---
+
+## Resolution
+
+Running the **printhead cleaning cycle** restored ink flow.
+
+---
+
+# Validation
+
+Successful configuration confirmed by:
+
+* Printer powers on using battery
+* Laptop connects via Wi-Fi Direct
+* Printer joins local Wi-Fi network
+* Printer detected by Windows
+* Test page prints successfully
+* Ink printing correctly
+
+Result:
+
+```
+Printer deployment completed successfully.
+Wireless printing operational.
+```
+
+---
+
+# Screenshots
+
+Recommended screenshots for repository documentation:
+
+```
+/screenshots
+
+01_printer_added_windows.png
+02_wifi_direct_connection.png
+03_wifi_network_connected.png
+04_printer_test_page.png
+05_battery_replacement.jpg
+```
+
+---
+
+# Key Lessons
+
+This deployment demonstrated multiple common Help Desk scenarios:
+
+* Hardware failure diagnosis
+* Component replacement
+* Wireless device setup
+* Driver installation
+* Print troubleshooting
+
+These tasks reflect typical **Level 1 / Desktop Support responsibilities**.
+
+---
+
+# Future Improvements
+
+Potential extensions for this project:
+* Print spooler troubleshooting
+* Network printer deployment via IP
+
+
+---
