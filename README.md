@@ -150,20 +150,14 @@ Connection was successfully established.
 
 # Printer Driver Installation
 
-## Method 1 – HP Smart
+## Method  – HP Smart
 
 1. Install HP Smart
 2. Launch application
 3. Select **Add Printer**
 4. Printer automatically detected
 
-## Method 2 – Windows Printer Installation
 
-```
-Settings
-→ Bluetooth & Devices
-→ Printers & Scanners
-→ Add Device
 ```
 
 Windows detected and installed the printer driver.
